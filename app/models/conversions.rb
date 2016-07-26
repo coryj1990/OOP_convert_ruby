@@ -53,9 +53,66 @@ class Massconvert
 end
 
 
+class Temperatureconvert
+	def setF (f)
+		@Far = f.to_f
+	end
+
+	def setC (c)
+		@Cel = c.to_f
+	end
+
+	def toF()
+		if @Far != nil
+			@conv = @Far
+			return @conv
+		elsif @Cel != nil
+			@conv = (@Cel*(9.0/5.0)) + 32
+			return @conv
+		end
+	end
+
+	def toC()
+		if @Far != nil
+			@conv = (@Far - 32)*(5.0/9.0)
+			return @conv
+		elsif @Cel != nil
+			@conv = @Cel
+			return @conv
+		end
+	end
+end	
 
 
+class Distanceconvert
+	def setmi (mi)
+		@mi = mi.to_f
+	end
 
+	def setkilom (km)
+		@kilom = km.to_f
+	end
+
+	def tomi()
+		if @mi != nil
+			@conv = @mi
+			return @conv
+		elsif @kilom != nil
+			@conv = @kilom*(1.0/1.609)
+			return @conv
+		end
+	end
+
+	def tokilom()
+		if @mi != nil
+			@conv = @mi*(1.609)
+			return @conv
+		elsif @kilom != nil
+			@conv = @kilom
+			return @conv
+		end
+	end
+end	
 
 
 
