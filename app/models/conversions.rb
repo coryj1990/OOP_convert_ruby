@@ -3,36 +3,36 @@ require "pry"
 
 class Massconvert
 	def setlbs (value)
-		@lbs = value
+		@lbs = value.to_f
 	end
 
 	def setkg (value)
-		@kg = value
+		@kg = value.to_f
 	end
 
 	def setstone (value)
-		@stone = value
+		@stone = value.to_f
 	end
 
 	def tolbs()
-		if @lbs != 0
+		if @lbs != nil
 			return @lbs
-		elsif @kg != 0
+		elsif @kg != nil
 			@conv = @kg*(1/0.4536)
 			return @conv
-		elsif @stone != 0
+		elsif @stone != nil
 			@conv = @stone*(1/0.07143)
 			return @conv
 		end
 	end
 
 	def tokg()
-		if @lbs != 0
+		if @lbs != nil
 			@conv = @lbs*(0.4536)
 			return @conv
-		elsif @kg != 0
+		elsif @kg != nil
 			return @kg
-		elsif @stone != 0
+		elsif @stone != nil
 			@conv = @stone*(0.4536/0.07143)
 			return @conv
 		end
@@ -40,12 +40,12 @@ class Massconvert
 
 
 	def tostone()
-		if @lbs != 0
+		if @lbs != nil
 			@conv = @lbs*(0.07143)
 			return @conv
-		elsif @kg != 0
+		elsif @kg != nil
 			@conv = @kg*(0.07143/0.4536)
-		elsif @stone != 0
+		elsif @stone != nil
 			return @stone
 		end
 	end
